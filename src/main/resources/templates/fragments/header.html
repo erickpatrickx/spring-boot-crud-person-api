@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+
+<div th:fragment="header-css">
+	<!-- this is header-css -->
+
+    <link rel="stylesheet" th:href="@{/css/jquery.dataTables.min.css}"
+		href="../../css/jquery.dataTables.min.css" />
+		
+			<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
+			<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+		href="../../css/bootstrap.min.css" />
+
+		
+</div>
+</head>
+<body>
+	<div th:fragment="header">
+		<!-- this is header -->
+		<nav class="navbar navbar-inverse">
+			<div class="container">
+			        
+			    
+				<div class="navbar-header">
+					  <img   src="../static/images/logo.png" width="130px" th:src="@{/images/logo.png}"/>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a th:href="@{/}"><span class="glyphicon glyphicon-name"></span>Home</a></li>
+						<!-- 
+						<li class="active"><a href="listarContatos">Listar Contatos</a></li>
+						<li class="active"><a href="inserirContato">Inserir Contato</a></li>
+						<li class="active"><a href="buscarContato">BuscarContato</a></li>
+						 -->
+
+						</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+<i class="fas fa-clock"></i>
+</body>
+</html>

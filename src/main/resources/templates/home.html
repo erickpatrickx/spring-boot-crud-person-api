@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Cabeçalho da aplicação -->
+<div th:replace="fragments/header :: header-css" />
+</head>
+<body>
+
+	<!-- Cabeçalho da aplicação -->
+	<div th:replace="fragments/header :: header" />
+
+	<div class="container">
+		<div class="starter-template">
+
+				<br></br> 
+				<a href="listarContatos" class="btn btn-lg btn-primary">Listar Contatos </a> 
+				<a href="inserirContato" class="btn btn-lg btn-primary">Inserir
+				Contato</a> 
+				<!-- <a href="buscarContato" class="btn btn-lg btn-primary">Buscar Contato </a> <br></br> -->
+			
+		</div>
+
+	</div>
+	<!-- /.container -->
+
+	<!-- Rodapé da aplicação -->
+	<div th:replace="fragments/footer :: footer" />
+</body>
+</html>
