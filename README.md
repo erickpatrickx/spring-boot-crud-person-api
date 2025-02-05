@@ -1,38 +1,116 @@
+# Person Management API
 
-Para rodar a aplicação:
-1. Importe o projeto ( File -> Import -> Existing Maven Project)
-2. O Eclipse vai atualizar as dependencias
-3. Crie um banco mysql [9] com nome contato.
-4. As configurações do banco ficam no arquivo application.properties faço o apontamento para o seu banco
-5. Rode a aplicação (procure a clase SpringBootWebApplication clique botão oposto em cima dela e va até Run as -> Java Aplication)
-6. O projeto cria o banco sozinho
-4. Cadastre no banco na tabela ROLE (1 - ROLE_ADMIN e 2 - ROLE_CONTATO)
-5. se estiver tudo ok acesse http://localhost:8080/
-6. existe uma senha padrão de adm - Login: admin Senha:password
+## Description
 
-Obs.
+The **Person Management API** is a Spring Boot application that provides a RESTful interface for managing person entities. It supports standard CRUD operations, allowing clients to create, retrieve, update, and delete person records.
 
-Pode ser que tenha que configurar a JDK 
+## Features
 
+- **Create Person**: Add a new person to the database.
+- **Retrieve Person**: Fetch details of a specific person by ID.
+- **Update Person**: Modify existing person information.
+- **Delete Person**: Remove a person from the database.
+- **List Persons**: Retrieve a list of all persons.
 
-Referências:
+## Technologies Used
 
-[1] Spring MVC 4 - Framework Java para Aplicações Web MVC - https://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html
+- **Spring Boot**: Framework for building the application.
+- **Spring Data JPA**: For data persistence and repository management.
+- **H2 Database**: In-memory database for development and testing.
+- **Maven**: Build and dependency management.
 
-[2] Spring Boot 1 - É um Framework Java (baseado na Plataforma Spring) para Aplicações web que usam inversão de contêiner de controle para a plataforma Java. https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-security
+## Prerequisites
 
-[3] Thymeleaf - É um engine de modelo Java XML / XHTML / HTML5 que pode funcionar tanto em ambientes da Web (baseados em Servlet) quanto em ambientes não-web. É mais adequado para servir XHTML / HTML5 na camada de visualização de aplicativos da web baseados em MVC, mas pode processar qualquer arquivo XML mesmo em ambientes off-line. Ele fornece integração completa do Spring Framework. https://www.thymeleaf.org
+- Java 8 or higher installed.
+- Maven installed.
 
-[4] Bootstrap - Framework para Aplicações Web responsiva - https://v4-alpha.getbootstrap.com/getting-started/introduction
+## Getting Started
 
-[5] JQuery - Biblioteca de Funções JavaScript - https://jquery.com/
+1. **Clone the Repository:**
 
-[6] ORM JPA - Abstarçaõ de Acesso a Dados - https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
+   ```bash
+   git clone https://github.com/erickpatrickx/crudSpring.git
+   cd crudSpring
+   ```
 
-[7] Spring Security - É um framework Java que prover uma estrutura de controle de acesso para aplicações Java/Java EE que fornece autenticação, autorização e outros recursos de segurança para aplicativos corporativos. https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/
+2. **Build the Application:**
 
-[8] Maven - Gestão de Builds e Dependências - https://maven.apache.org
+   ```bash
+   mvn clean install
+   ```
 
-[9] Mysql 5 - Sistema de Gerenciamento de Banco de Dados - https://dev.mysql.com/downloads/mysql/
+3. **Run the Application:**
+
+   ```bash
+   mvn spring-boot:run
+   ```
+
+   The application will start and be accessible at `http://localhost:8080`.
+
+## API Endpoints
+
+The API provides the following endpoints for managing persons:
+
+- **Create a Person**
+
+  - **URL:** `/api/persons`
+  - **Method:** `POST`
+  - **Request Body:**
+
+    ```json
+    {
+      "name": "John Doe",
+      "age": 30,
+      "email": "john.doe@example.com"
+    }
+    ```
+
+  - **Response:** Returns the created person object with an assigned ID.
+
+- **Retrieve a Person by ID**
+
+  - **URL:** `/api/persons/{id}`
+  - **Method:** `GET`
+  - **Response:** Returns the person object with the specified ID.
+
+- **Update a Person**
+
+  - **URL:** `/api/persons/{id}`
+  - **Method:** `PUT`
+  - **Request Body:**
+
+    ```json
+    {
+      "name": "Jane Doe",
+      "age": 31,
+      "email": "jane.doe@example.com"
+    }
+    ```
+
+  - **Response:** Returns the updated person object.
+
+- **Delete a Person**
+
+  - **URL:** `/api/persons/{id}`
+  - **Method:** `DELETE`
+  - **Response:** Returns a confirmation message upon successful deletion.
+
+- **List All Persons**
+
+  - **URL:** `/api/persons`
+  - **Method:** `GET`
+  - **Response:** Returns a list of all person objects.
+
+## Database Configuration
+
+By default, the application uses an in-memory H2 database. To use a different database, update the `application.properties` file with your database configurations.
+
+## Testing
+
+The application includes unit tests for the service layer. To run the tests, execute:
+
+```bash
+mvn test
+```
 
 
